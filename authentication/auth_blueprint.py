@@ -148,17 +148,29 @@ def signup():
 @login_required
 def logout():
     try:
-        requests.post(
-            "https://oauth2.googleapis.com/revoke",
-            params={"token": flow.credentials.token},
-            headers={"content-type": "application/x-www-form-urlencoded"},
-        )
+        # Revoke the Google access token (if using Google)
+        if "google_id" in session:
+            requests.post(
+                "https://oauth2.googleapis.com/revoke",
+                params={"token": flow.credentials.token},
+                headers={"content-type": "application/x-www-form-urlencoded"},
+            )
+
+        # Log out the user if authenticated with Microsoft (using MSAL)
+        if "user" in session:
+            session.pop("user")  # Clear the Microsoft-specific session data
+
         logout_user()
+
+        flash("Logged out successfully!", category="success")
         return redirect(url_for("index"))
-    except:
-        logout_user()
-        session.clear()
+
+    except Exception as e:
+        # Handle any exceptions that might occur during logout
+        print(f"Logout error: {str(e)}")
+        flash("An error occurred during logout. Please try again.", category="error")
         return redirect(url_for("index"))
+
 
 
 @auth.route("/signup_callback")
@@ -193,6 +205,7 @@ def microsoft_callback():
             return render_template("auth_error.html", result=result)
 
         session["user"] = result.get("id_token_claims")
+
 
     except ValueError:
         pass
