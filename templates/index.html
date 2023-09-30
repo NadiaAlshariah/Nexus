@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories = True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <h2>{{message}}</h2>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    hello world
+    <button><a href="{{url_for('auth.login')}}">login here</a></button>
+</body>
+</html>
