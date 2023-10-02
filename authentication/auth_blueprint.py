@@ -145,7 +145,7 @@ def signup():
 
 
 @auth.route("/logout")
-@login_required
+#@login_required
 def logout():
     try:
         # Revoke the Google access token (if using Google)
@@ -157,19 +157,19 @@ def logout():
             )
 
         # Log out the user if authenticated with Microsoft (using MSAL)
-        if "user" in session:
-            session.pop("user")  # Clear the Microsoft-specific session data
-
-        logout_user()
-
+        elif "user" in session:
+            session.clear()  # Clear the Microsoft-specific session data
+            #logout_user()
         flash("Logged out successfully!", category="success")
-        return redirect(url_for("index"))
+        return redirect(url_for("auth.login"))
+
 
     except Exception as e:
         # Handle any exceptions that might occur during logout
         print(f"Logout error: {str(e)}")
         flash("An error occurred during logout. Please try again.", category="error")
-        return redirect(url_for("index"))
+        return redirect(url_for("auth.login"))
+
 
 
 
@@ -190,7 +190,7 @@ def signup_callback():
     )
 
     session["google_id"] = id_info.get("sub")
-    session["name"] = id_info.get("name")
+    session["name"] = username = id_info.get("name")
     return redirect(url_for("index"))
 
 
@@ -202,10 +202,13 @@ def microsoft_callback():
         result = _build_msal_app().acquire_token_by_auth_code_flow(flow, request.args)
 
         if "error" in result:
-            return render_template("auth_error.html", result=result)
+            flash("error occured in logging out", category="error")
+            return redirect(url_for("index"))
 
         session["user"] = result.get("id_token_claims")
 
+        user_info = session.get("user")
+        username = user_info.get("name")
 
     except ValueError:
         pass

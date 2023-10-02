@@ -7,3 +7,4 @@ app.register_blueprint(auth, url_prefix="/authentication")
 
 if __name__ == "__main__":
     app.run()
+
