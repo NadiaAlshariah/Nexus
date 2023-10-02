@@ -3,6 +3,7 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 import os
+from flask_migrate import Migrate
 
 
 db = SQLAlchemy()
@@ -14,8 +15,10 @@ app.config["SECRET_KEY"] = "secret word"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
 db.init_app(app)
 
+migrate = Migrate(app, db)
 
-from models import User
+
+from models import User, ExternalUser
 
 
 def create_database(app):

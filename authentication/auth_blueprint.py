@@ -10,7 +10,7 @@ from flask import (
 )
 from app import db
 from app import app
-from models import User
+from models import User, ExternalUser
 from flask_login import login_user, logout_user, login_required
 import bcrypt
 import os
@@ -145,7 +145,7 @@ def signup():
 
 
 @auth.route("/logout")
-#@login_required
+# @login_required
 def logout():
     try:
         # Revoke the Google access token (if using Google)
@@ -159,18 +159,15 @@ def logout():
         # Log out the user if authenticated with Microsoft (using MSAL)
         elif "user" in session:
             session.clear()  # Clear the Microsoft-specific session data
-            #logout_user()
+            # logout_user()
         flash("Logged out successfully!", category="success")
         return redirect(url_for("auth.login"))
-
 
     except Exception as e:
         # Handle any exceptions that might occur during logout
         print(f"Logout error: {str(e)}")
         flash("An error occurred during logout. Please try again.", category="error")
         return redirect(url_for("auth.login"))
-
-
 
 
 @auth.route("/signup_callback")
@@ -189,8 +186,27 @@ def signup_callback():
         id_token=credentials._id_token, request=token_request, audience=GOOGLE_CLIENT_ID
     )
 
-    session["google_id"] = id_info.get("sub")
-    session["name"] = username = id_info.get("name")
+    session["google_id"] = id = id_info.get("sub")
+    session["name"] = name = id_info.get("name")
+
+    id_exist = ExternalUser.query.filter_by(external_id=id).first()
+    if not id_exist:
+        email = id_info.get("email")
+        username = email[0 : email.find("@")]
+        i = 1
+        new_username = username
+        while ExternalUser.query.filter_by(username=new_username).first():
+            new_username = username + str(i)
+            i += 1
+        username = new_username
+        if ExternalUser.query.filter_by(email=email).first():
+            email = email[0 : email.find("@")] + "+1" + email[email.find("@") :]
+        new_user = ExternalUser(
+            email=email, external_id=id, name=name, username=username
+        )
+        db.session.add(new_user)  # Add the user object to the session
+        db.session.commit()
+
     return redirect(url_for("index"))
 
 
@@ -207,8 +223,28 @@ def microsoft_callback():
 
         session["user"] = result.get("id_token_claims")
 
-        user_info = session.get("user")
-        username = user_info.get("name")
+        id_info = session.get("user")
+        name = id_info.get("name")
+
+        id = id_info.get("oid")
+
+        id_exist = ExternalUser.query.filter_by(external_id=id).first()
+        if not id_exist:
+            email = id_info.get("preferred_username")
+            username = email[0 : email.find("@")]
+            i = 1
+            new_username = username
+            while ExternalUser.query.filter_by(username=new_username).first():
+                new_username = username + str(i)
+                i += 1
+            username = new_username
+            if ExternalUser.query.filter_by(email=email).first():
+                email = email[0 : email.find("@")] + "+1" + email[email.find("@") :]
+            new_user = ExternalUser(
+                email=email, external_id=id, name=name, username=username
+            )
+            db.session.add(new_user)  # Add the user object to the session
+            db.session.commit()
 
     except ValueError:
         pass
