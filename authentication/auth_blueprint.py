@@ -10,7 +10,7 @@ from flask import (
 )
 from app import db
 from app import app
-from models import User, ExternalUser
+from models import User
 from flask_login import login_user, logout_user, login_required
 import bcrypt
 import os
@@ -83,22 +83,22 @@ def loginWithGoogle():
 @auth.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
-        email = request.form.get("email")
+        username = request.form.get("username")
         password = request.form.get("password")
         password = password.encode("utf-8")
 
-        user = User.query.filter_by(email=email).first()
+        user = User.query.filter_by(username=username).first()
         if user:
             if bcrypt.checkpw(password, user.password):
                 flash("logged in", category="success")
-                login_user(user, remember=True)
+                login_user(user=user, remember=True)
                 return redirect(
                     url_for("index")
                 )  # i should change this later to the home
             else:
                 flash("Password is incorrect", category="error")
         else:
-            flash("Email doesn't exist", category="error")
+            flash("username doesn't exist", category="error")
 
     return render_template("login.html")
 
@@ -111,10 +111,13 @@ def signup():
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
 
-        email_exists = User.query.filter_by(email=email).first()
+        email_exists = User.query.filter_by(e_mail=email).first()
         username_exists = User.query.filter_by(username=username).first()
         if email_exists:
-            flash("email already have been used", category="error")
+            flash(
+                "email already have been used or you have signed using either google or microsoft",
+                category="error",
+            )
         elif not ("@" in email and "." in email):
             flash("email is invalid", category="error")
         elif username_exists:
@@ -131,19 +134,21 @@ def signup():
             salt = bcrypt.gensalt()
             encrypted_password = bcrypt.hashpw(password, salt)
             new_user = User(
-                email=email,
+                e_mail=email,
                 username=username,
                 password=encrypted_password,
+                external=False,
             )
             db.session.add(new_user)
             db.session.commit()
-            login_user(new_user, remember=True)
+            login_user(user=new_user, remember=True)
             flash("User created!")
             return redirect(url_for("index"))  # i should change it to home page
 
     return render_template("signup.html")
 
 
+@login_required
 @auth.route("/logout")
 # @login_required
 def logout():
@@ -155,12 +160,11 @@ def logout():
                 params={"token": flow.credentials.token},
                 headers={"content-type": "application/x-www-form-urlencoded"},
             )
-
         # Log out the user if authenticated with Microsoft (using MSAL)
-        elif "user" in session:
-            session.clear()  # Clear the Microsoft-specific session data
-            # logout_user()
-        flash("Logged out successfully!", category="success")
+        if "user" in session:
+            session.clear()
+            logout_user()
+            flash("Logged out successfully!", category="success")
         return redirect(url_for("auth.login"))
 
     except Exception as e:
@@ -185,28 +189,30 @@ def signup_callback():
     id_info = id_token.verify_oauth2_token(
         id_token=credentials._id_token, request=token_request, audience=GOOGLE_CLIENT_ID
     )
-
     session["google_id"] = id = id_info.get("sub")
     session["name"] = name = id_info.get("name")
 
-    id_exist = ExternalUser.query.filter_by(external_id=id).first()
+    id_exist = User.query.filter_by(external_id=id).first()
     if not id_exist:
         email = id_info.get("email")
         username = email[0 : email.find("@")]
         i = 1
         new_username = username
-        while ExternalUser.query.filter_by(username=new_username).first():
+        while User.query.filter_by(username=new_username).first() != None:
             new_username = username + str(i)
             i += 1
         username = new_username
-        if ExternalUser.query.filter_by(email=email).first():
-            email = email[0 : email.find("@")] + "+1" + email[email.find("@") :]
-        new_user = ExternalUser(
-            email=email, external_id=id, name=name, username=username
+        new_user = User(
+            e_mail=email,
+            external_id=id,
+            name=name,
+            username=username,
+            external=True,
         )
         db.session.add(new_user)  # Add the user object to the session
         db.session.commit()
-
+    user = User.query.filter_by(external_id=id).first()
+    login_user(user=user)
     return redirect(url_for("index"))
 
 
@@ -224,28 +230,33 @@ def microsoft_callback():
         session["user"] = result.get("id_token_claims")
 
         id_info = session.get("user")
-        name = id_info.get("name")
+        session["name"] = name = id_info.get("name")
 
         id = id_info.get("oid")
 
-        id_exist = ExternalUser.query.filter_by(external_id=id).first()
+        id_exist = User.query.filter_by(external_id=id).first()
         if not id_exist:
             email = id_info.get("preferred_username")
             username = email[0 : email.find("@")]
             i = 1
             new_username = username
-            while ExternalUser.query.filter_by(username=new_username).first():
+            while User.query.filter_by(username=new_username).first() != None:
                 new_username = username + str(i)
                 i += 1
             username = new_username
-            if ExternalUser.query.filter_by(email=email).first():
+            if User.query.filter_by(e_mail=email).first():
                 email = email[0 : email.find("@")] + "+1" + email[email.find("@") :]
-            new_user = ExternalUser(
-                email=email, external_id=id, name=name, username=username
+            new_user = User(
+                e_mail=email,
+                external=True,
+                name=name,
+                username=username,
+                external_id=id,
             )
             db.session.add(new_user)  # Add the user object to the session
             db.session.commit()
-
+        user = User.query.filter_by(external_id=id).first()
+        login_user(user=user)
     except ValueError:
         pass
 

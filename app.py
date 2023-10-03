@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, session, flash, redirect, url_for
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -17,8 +17,7 @@ db.init_app(app)
 
 migrate = Migrate(app, db)
 
-
-from models import User, ExternalUser
+from models import User
 
 
 def create_database(app):
@@ -30,10 +29,10 @@ app.app_context().push()
 create_database(app)
 
 login_manager = LoginManager()
-login_manager.login_view = "login"
+login_manager.login_view = "auth.login"
 login_manager.init_app(app)
 
 
 @login_manager.user_loader
-def load_user(id):
-    return User.query.get(int(id))
+def load_user(user_id):
+    return User.query.get(int(user_id))
