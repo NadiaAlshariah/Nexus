@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories = True) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <h2>{{message}}</h2>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <h2>Good morning, {{ user.name }}</h2>
+    
+    <form method="POST">
+        <textarea name="post" id="post" rows="10" cols="50"></textarea>
+        <br>
+        <button type="submit">Post</button>
+    </form>
+    
+    <ul id="posts">
+        {% for post in posts %}
+        <li>{{ post.text }}, {{post.text_type}}</li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+
+</html>

@@ -88,15 +88,16 @@ def login():
         password = password.encode("utf-8")
 
         user = User.query.filter_by(username=username).first()
-        if user:
-            if bcrypt.checkpw(password, user.password):
-                flash("logged in", category="success")
-                login_user(user=user, remember=True)
-                return redirect(
-                    url_for("index")
-                )  # i should change this later to the home
+        if user != None:
+            if user.password != None:
+                if bcrypt.checkpw(password, user.password):
+                    flash("logged in", category="success")
+                    login_user(user=user, remember=True)
+                    return redirect(url_for("home"))
+                else:
+                    flash("Password is incorrect", category="error")
             else:
-                flash("Password is incorrect", category="error")
+                flash("Username logged in using microsoft or google", category="error")
         else:
             flash("username doesn't exist", category="error")
 
@@ -143,7 +144,7 @@ def signup():
             db.session.commit()
             login_user(user=new_user, remember=True)
             flash("User created!")
-            return redirect(url_for("index"))  # i should change it to home page
+            return redirect(url_for("home"))
 
     return render_template("signup.html")
 
@@ -213,7 +214,7 @@ def signup_callback():
         db.session.commit()
     user = User.query.filter_by(external_id=id).first()
     login_user(user=user)
-    return redirect(url_for("index"))
+    return redirect(url_for("home"))
 
 
 @auth.route("/microsoft_callback")
@@ -244,8 +245,6 @@ def microsoft_callback():
                 new_username = username + str(i)
                 i += 1
             username = new_username
-            if User.query.filter_by(e_mail=email).first():
-                email = email[0 : email.find("@")] + "+1" + email[email.find("@") :]
             new_user = User(
                 e_mail=email,
                 external=True,
@@ -260,4 +259,4 @@ def microsoft_callback():
     except ValueError:
         pass
 
-    return redirect(url_for("index"))
+    return redirect(url_for("home"))
