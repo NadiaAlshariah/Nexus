@@ -1,4 +1,4 @@
-from flask import render_template, request, flash
+from flask import render_template, request, flash, abort
 from app import app, db
 from flask_login import login_required, current_user
 from models import Post
@@ -6,7 +6,7 @@ import joblib
 import numpy as np
 import pickle
 from keras.preprocessing.sequence import pad_sequences
-
+from models import User, Post
 from static.model.text_cleaner import TextCleaner
 
 
@@ -153,9 +153,8 @@ def home():
             db.session.commit()
             flash("Post added")
 
-    # Get posts from the current user and their friends
     friend_ids = [friend.id for friend in current_user.friends]
-    friend_ids.append(current_user.id)  # Include the current user's posts
+    friend_ids.append(current_user.id) 
 
     posts = (
         Post.query.filter(Post.user_id.in_(friend_ids)).order_by(Post.date.desc()).all()
