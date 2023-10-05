@@ -11,12 +11,16 @@
     <h3>{{user.username}}</h3>
     {% if user == current_user %}
     <button><a href="{{url_for('settings.settings_page')}}">settings</a></button>
-    {% else %}
-    <button><a href="{{url_for('index')}}">index</a></button>
+    {% elif isFriend %}
+    <button><a href="{{url_for('user.unfollow', username = user.username)}}">unfollow</a></button>
+    {% elif not isFriend %}
+    <button><a href="{{url_for('user.follow', username = user.username)}}">follow</a></button>
     {% endif %}
     <ul id="posts">
         {% for post in posts %}
         <li>{{ post.text }}, {{post.text_type}}</li>
+        <i class="fa-solid fa-thumbs-up"></i>
+        <button><a href="{{url_for('user.post_view', username = user.username, post_id = post.id)}}">see post details</a></button>
         {% endfor %}
     </ul>
 </body>

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/77c3f028b1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'index.js')}}"></script>
 </head>
 
 <body>
@@ -25,12 +27,24 @@
     </form>
     
     <ul id="posts">
+        
         {% for post in posts %}
         <li>{{ post.text }}, {{post.text_type}}</li>
+        
+        <span id="likes-count-{{post.id}}">
+            {{ post.likes|length }}</span>
+
+        {% if user.id in post.likes|map(attribute="user_id")|list %}
+        <i class="fas fa-thumbs-up" id="like-button-{{post.id}}" onclick="like({{post.id}}, '{{user.username}}')"></i>
+        {% else %}
+        <i class="far fa-thumbs-up" id="like-button-{{post.id}}" onclick="like({{post.id}}, '{{user.username}}')"></i>
+        {% endif %}
+
+        <button><a href="{{url_for('user.post_view', username = user.username, post_id = post.id)}}">see post
+                details</a></button>
+        
         {% endfor %}
     </ul>
-
-
+    
 </body>
-
 </html>

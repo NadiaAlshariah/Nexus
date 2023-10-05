@@ -20,7 +20,8 @@ class User(db.Model, UserMixin):
     location = db.Column(db.String(150))
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     external = db.Column(db.Boolean)
-    posts = db.relationship("Post")
+    posts = db.relationship("Post", backref="user")
+    comments = db.relationship("Comment", backref="user")
     friends = db.relationship(
         "User",
         secondary="friendship",
@@ -28,6 +29,7 @@ class User(db.Model, UserMixin):
         secondaryjoin="User.id == Friendship.friend_id",
         backref="user_friends",
     )
+    liked_posts = db.relationship("LikedPost", backref="user", lazy=True)
 
 
 class Post(db.Model):
@@ -36,3 +38,28 @@ class Post(db.Model):
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     text_type = db.Column(db.String(50))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    comments = db.relationship("Comment", backref="post")
+    likes = db.relationship("LikedPost", back_populates="post")
+
+
+class LikedPost(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(
+        db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"), nullable=False
+    )
+    post_id = db.Column(
+        db.Integer, db.ForeignKey("post.id", ondelete="CASCADE"), nullable=False
+    )
+    post = db.relationship("Post", back_populates="likes")
+
+
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String(10000))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+    user_id = db.Column(
+        db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"), nullable=False
+    )
+    post_id = db.Column(
+        db.Integer, db.ForeignKey("post.id", ondelete="CASCADE"), nullable=False
+    )

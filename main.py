@@ -6,7 +6,7 @@ from user.user_blueprint import user_bp
 
 app.register_blueprint(auth, url_prefix="/authentication")
 app.register_blueprint(settings, url_prefix="/settings")
-app.register_blueprint(user_bp, url_prefix = "/<username>")
+app.register_blueprint(user_bp, url_prefix="/<username>")
 
 
 if __name__ == "__main__":
