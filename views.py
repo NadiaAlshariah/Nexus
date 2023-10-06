@@ -1,3 +1,4 @@
+from io import BytesIO
 from flask import render_template, request, flash, jsonify
 from app import app, db, get_top_interests_and_update
 from flask_login import login_required, current_user
@@ -10,9 +11,55 @@ from models import User, Post, LikedPost
 from static.model.text_cleaner import TextCleaner
 
 
+def calculate_similarity(user1, user2):
+    location_similarity = 1 if user1.location == user2.location else 0
+    interest_similarity = 1 if user1.top_interest == user2.top_interest else 0
+    mutual_friends = len(set(user1.friends) & set(user2.friends))
+    friends_similarity = mutual_friends / (len(user1.friends) + len(user2.friends) + 1)
+
+    # Combine the similarities with appropriate weights
+    total_similarity = (
+        location_similarity * 0.3
+        + interest_similarity * 0.4  # Adjust weights as needed
+        + friends_similarity * 0.3
+    )
+    return total_similarity
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
+
+
+@login_required
+@app.route("/find_users")
+def find_users():
+    searched = request.args.get("text")
+    if searched:
+        searched_answer = User.query.filter(User.username.ilike(f"%{searched}%")).all()
+    else:
+        searched_answer = []
+
+    current_user_friends = set(current_user.friends)
+    users = User.query.filter(User.id != current_user.id).all()
+
+    similar_users = []
+    for user in users:
+        if user not in current_user_friends:
+            similarity = calculate_similarity(current_user, user)
+            similar_users.append((user, similarity))
+
+    similar_users.sort(key=lambda x: x[1], reverse=True)
+    similar_users_without_scores = [user for user, _ in similar_users]
+
+    print(similar_users_without_scores)
+    return render_template(
+        "find_users.html",
+        similar_users=similar_users_without_scores,
+        searched_answer=searched_answer,
+        searched=searched,
+        current_user=current_user,
+    )
 
 
 @app.route("/home", methods=["POST", "GET"])
@@ -161,4 +208,8 @@ def home():
         Post.query.filter(Post.user_id.in_(friend_ids)).order_by(Post.date.desc()).all()
     )
 
-    return render_template("home.html", user=current_user, posts=posts)
+    return render_template(
+        "home.html",
+        user=current_user,
+        posts=posts,
+    )

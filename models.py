@@ -32,6 +32,7 @@ class User(db.Model, UserMixin):
     liked_posts = db.relationship("LikedPost", backref="user", lazy=True)
     interests = db.relationship("UserInterest", back_populates="user")
     top_interest = db.Column(db.String(80))
+    profile_picture = db.Column(db.String(100), default="vector-sign-of-user-icon.jpg")
 
 
 class Interest(db.Model):
@@ -79,3 +80,9 @@ class Comment(db.Model):
     post_id = db.Column(
         db.Integer, db.ForeignKey("post.id", ondelete="CASCADE"), nullable=False
     )
+
+
+class Upload(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    filename = db.Column(db.String(50))
+    data = db.Column(LargeBinary)

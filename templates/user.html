@@ -6,9 +6,10 @@
     <title>{{user.username}}</title>
 </head>
 <body>
-    <img src="" alt="profile pic">
+    <img src="{{url_for('static', filename = 'uploads/'+ user.profile_picture)}}" width="100" height="100" alt="profile pic">
     <h1>{{user.name}}</h1>
     <h3>{{user.username}}</h3>
+    <p>{{user.bio}}</p>
     {% if user == current_user %}
     <button><a href="{{url_for('settings.settings_page')}}">settings</a></button>
     {% elif isFriend %}

@@ -6,6 +6,7 @@ import os
 from flask_migrate import Migrate
 
 
+
 db = SQLAlchemy()
 DB_NAME = "users_database.db"
 
@@ -13,6 +14,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 app.config["SECRET_KEY"] = "secret word"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
+app.config["UPLOAD_FOLDER"] = "static/uploads"
 db.init_app(app)
 
 migrate = Migrate(app, db)
