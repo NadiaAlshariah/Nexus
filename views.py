@@ -72,7 +72,7 @@ def home():
         if len(post) < 1:
             flash("Post is too short")
         else:
-            if len(post.split()) >= 45:
+            if len(post.split()) >= 20:
                 model1 = joblib.load("static/model/MODEL1_S&NS.pkl")
 
                 file_path = r"static\model\tokenizer1.pickle"
