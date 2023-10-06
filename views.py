@@ -1,5 +1,5 @@
 from flask import render_template, request, flash, jsonify
-from app import app, db
+from app import app, db, get_top_interests_and_update
 from flask_login import login_required, current_user
 from models import Post
 import joblib
@@ -18,6 +18,7 @@ def index():
 @app.route("/home", methods=["POST", "GET"])
 @login_required
 def home():
+    get_top_interests_and_update(current_user.id)
     if request.method == "POST":
         post = request.form.get("post")
 
@@ -148,7 +149,7 @@ def home():
             else:
                 text_type = "not science"
 
-            new_post = Post(text=post, user_id=current_user.id, text_type=text_type)
+            new_post = Post(text=post, user_id=current_user.id, topic=text_type)
             db.session.add(new_post)
             db.session.commit()
             flash("Post added")

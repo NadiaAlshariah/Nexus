@@ -30,13 +30,29 @@ class User(db.Model, UserMixin):
         backref="user_friends",
     )
     liked_posts = db.relationship("LikedPost", backref="user", lazy=True)
+    interests = db.relationship("UserInterest", back_populates="user")
+    top_interest = db.Column(db.String(80))
+
+
+class Interest(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), unique=True)
+
+
+class UserInterest(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    interest_id = db.Column(db.Integer, db.ForeignKey("interest.id"), nullable=False)
+
+    user = db.relationship("User", backref="user_interests")
+    interest = db.relationship("Interest")
 
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
-    text_type = db.Column(db.String(50))
+    topic = db.Column(db.String(50))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     comments = db.relationship("Comment", backref="post")
     likes = db.relationship("LikedPost", back_populates="post")
