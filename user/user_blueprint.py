@@ -6,10 +6,13 @@ from flask_login import login_required, current_user
 user_bp = Blueprint("user", __name__, template_folder="templates")
 
 
+
 @user_bp.route("/", methods=["POST", "GET"])
 def user_profile(username):
     if username.lower() == "home":
         return redirect(url_for("home"))
+    if username.lower() == "interests":
+        return redirect(url_for("interests"))
     user = User.query.filter_by(username=username).first()
     if user:
         posts = Post.query.filter_by(user_id=user.id).order_by(Post.date.desc()).all()
@@ -135,6 +138,8 @@ def like_post(username, post_id):
             "liked": current_user.id in map(lambda x: x.user_id, post.likes),
         }
     )
+
+
 
 def get_top_interests_and_update(user_id):
     user = User.query.get(user_id)

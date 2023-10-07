@@ -47,6 +47,8 @@ flow = Flow.from_client_secrets_file(
 )
 
 
+
+
 def _build_auth_code_flow(authority=None, scopes=None):
     return _build_msal_app(authority=authority).initiate_auth_code_flow(
         scopes or app_config.SCOPE_MICROSOFT,
@@ -260,3 +262,4 @@ def microsoft_callback():
         pass
 
     return redirect(url_for("home"))
+

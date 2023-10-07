@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interests</title>
+</head>
+<body>
+    <form action="{{ url_for('interests') }}" method="POST">
+        {% for interest in interests %}
+            <button type="submit" name="interest" value="{{ interest }}">
+                {% if interest in user_interests %}
+                    <span style="border: 4px; color: aqua;">{{ interest }}</span>
+                {% else %}
+                    {{ interest }}
+                {% endif %}
+            </button>
+        {% endfor %}
+    </form>
+</body>
+</html>

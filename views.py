@@ -1,5 +1,5 @@
 from io import BytesIO
-from flask import render_template, request, flash, jsonify
+from flask import json, render_template, request, flash, jsonify
 from app import app, db, get_top_interests_and_update
 from flask_login import login_required, current_user
 from models import Post
@@ -29,6 +29,39 @@ def calculate_similarity(user1, user2):
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@login_required
+@app.route("/interests", methods = ["POST", "GET"])
+def interests():
+    interests = ["Life Science",
+             "Innovation",
+             "Biology", 
+             "Health and Medicine", 
+             "Programming", 
+             "Math and Statics", 
+             "History", 
+             "AI", 
+             "Physical Science", 
+             "Chemistry", 
+             "Astronomy", 
+             "Engineering",
+             "logic"
+            ]
+    
+    if request.method == 'POST':
+        interest_text = request.form.get('interest')
+
+        interests = json.loads(current_user.user_interests)
+        
+        if interest_text in interests:
+            interests.remove(interest_text)
+        else:
+            interests.append(interest_text)
+        interests = list(interests)
+        current_user.user_interests = json.dumps(interests)
+        db.session.commit()
+        
+    return render_template("interests.html", interests = interests, user_interests=current_user.user_interests)
 
 
 @login_required
