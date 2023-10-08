@@ -1,0 +1,26 @@
+resources of data :
+
+https://www.kaggle.com/datasets/abisheksudarshan/topic-modeling-for-research-articles
+https://www.kaggle.com/datasets/arashnic/urban-sound
+https://www.kaggle.com/datasets/jainpooja/topic-modeling-for-research-articles-20
+https://www.kaggle.com/datasets/shivanandmn/multilabel-classification-dataset?select=train.csv
+https://www.kaggle.com/datasets/extralime/math-lectures
+https://www.kaggle.com/datasets/mrutyunjaybiswal/iitjee-neet-aims-students-questions-data
+https://www.kaggle.com/datasets/anmolkumar/janatahack-independence-day-2020-ml-hackathon?select=train.csv
+https://www.kaggle.com/datasets/viniciuslambert/medium-data-science-articles-dataset
+https://www.kaggle.com/datasets/baraamelhem/topic-classification-dataset
+https://www.kaggle.com/datasets/ivantha/sri-lanka-electronic-ads-dataset
+https://www.kaggle.com/datasets/jebathuraiibarnabas/engineering-books-data
+https://www.kaggle.com/datasets/tboyle10/medicaltranscriptions
+https://www.kaggle.com/datasets/jpmiller/layoutlm?select=medquad.csv
+https://www.kaggle.com/datasets/louise2001/quantum-physics-articles-on-arxiv-2010-to-2020
+https://www.kaggle.com/datasets/vivmankar/physics-vs-chemistry-vs-biology
+https://www.kaggle.com/datasets/die9origephit/climate-change-tweets
+https://www.kaggle.com/datasets/emiliawisnios/national-energy-and-climate-plans-eu
+https://www.kaggle.com/datasets/namanj27/astronomers-telegram-dataset?select=Processed_Atels.csv
+https://www.kaggle.com/datasets/patrickfleith/space-news-dataset
+https://www.kaggle.com/datasets/amartyanambiar/the-space-race-tweets
+https://www.kaggle.com/datasets/stackoverflow/pythonquestions?select=Answers.csv
+https://www.kaggle.com/datasets/maksymshkliarevskyi/reddit-data-science-posts
+nasa data: https://www.citizenscience.gov/catalog/#
+
