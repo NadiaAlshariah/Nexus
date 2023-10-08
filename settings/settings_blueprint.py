@@ -13,6 +13,7 @@ from app import db, app
 from models import User, Upload
 from flask_login import login_required, current_user
 import os
+import urllib.request
 
 settings = Blueprint("settings", __name__, template_folder="templates")
 
@@ -28,12 +29,12 @@ def settings_page():
 def changeName():
     user = User.query.filter_by(username=current_user.username).first()
     if user:
-        if request.method == "POST":
+        if request == "POST":
             input_ = request.form.get("text")
             if input_ != "" and input_ != None:
                 user.name = input_
                 db.session.commit()
-                flash("name has been changed")
+                flash("name has been changes")
     else:
         flash("error has occured")
     return redirect(url_for("settings.settings_page"))
@@ -66,10 +67,10 @@ def uploadProfilePicture():
 def changeBio():
     user = User.query.filter_by(username=current_user.username).first()
     if user:
-        if request.method == "POST":
+        if request == "POST":
             input_ = request.form.get("text")
             if input_ != "" and input_ != None:
-                user.bio = input_
+                user.Bio = input_
                 db.session.commit()
                 flash("bio has been changes")
     else:
@@ -82,7 +83,7 @@ def changeBio():
 def changeUsername():
     user = User.query.filter_by(username=current_user.username).first()
     if user:
-        if request.method == "POST":
+        if request == "POST":
             input_ = request.form.get("text")
             if input_ != "" and input_ != None and input_ > 3:
                 user.username = input_
