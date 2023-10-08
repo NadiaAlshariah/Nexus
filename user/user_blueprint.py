@@ -136,20 +136,5 @@ def like_post(username, post_id):
         }
     )
 
-def get_top_interests_and_update(user_id):
-    user = User.query.get(user_id)
-    posts = user.posts.order_by(Post.date_created.desc()).limit(20).all()
-    likes = user.liked_posts.order_by(Post.date_created.desc()).limit(20).all()
-    comments = user.comments.order_by(Post.date_created.desc()).limit(20).all()
-
-    interests = []
-    for post in posts:
-        interests.append(post.topic)
-    for like in likes:
-        interests.append(like.topic)
-    for comment in comments:
-        interests.append(comment.topic)
-
-    print(interests)
 
 

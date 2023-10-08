@@ -87,4 +87,3 @@ def get_top_interests_and_update(user_id):
     top_interest = interest_counts.most_common(1)[0][0] if interest_counts else None
 
     user.top_interest = top_interest
-    print(top_interest)

@@ -52,7 +52,6 @@ def find_users():
     similar_users.sort(key=lambda x: x[1], reverse=True)
     similar_users_without_scores = [user for user, _ in similar_users]
 
-    print(similar_users_without_scores)
     return render_template(
         "find_users.html",
         similar_users=similar_users_without_scores,
@@ -61,13 +60,18 @@ def find_users():
         current_user=current_user,
     )
 
+@login_required
+@app.route
+def home():
+    return "home.html"
+
 
 @app.route("/home", methods=["POST", "GET"])
 @login_required
-def home():
+def add_project():
     get_top_interests_and_update(current_user.id)
     if request.method == "POST":
-        post = request.form.get("post")
+        post = request.form.get("text")
 
         if len(post) < 1:
             flash("Post is too short")

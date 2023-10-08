@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add a project</title>
+</head>
+<body>
+    <form action="url_for('add_project')" method = "POST">
+        <input type="text" name="title" id="title" placeholder="project title">
+        <input type="text" id = "text" name = "text" placeholder="write a brief about the project">
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="provide a detailed description"></textarea>
+        <input type="text", name = "category" id = "category" placeholder="category">
+        duration
+        <input type = "date" name = "date" id = "date" placeholder="end">
+        <input type = "date" name = "date" id = "date" placeholder="start">
+        <select id="country" name="country">
+            <option value="Jordan">Jordan</option>
+        </select>
+        <button type="submit">create a new project</button>
+    </form>
+</body>
+</html>

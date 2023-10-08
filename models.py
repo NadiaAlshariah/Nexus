@@ -44,7 +44,6 @@ class UserInterest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     interest_id = db.Column(db.Integer, db.ForeignKey("interest.id"), nullable=False)
-
     user = db.relationship("User", backref="user_interests")
     interest = db.relationship("Interest")
 
