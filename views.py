@@ -1,5 +1,6 @@
+import datetime
 from io import BytesIO
-from flask import render_template, request, flash, jsonify
+from flask import render_template, request, flash, jsonify, redirect, url_for
 from app import app, db, get_top_interests_and_update
 from flask_login import login_required, current_user
 from models import Post
@@ -61,12 +62,17 @@ def find_users():
     )
 
 @login_required
-@app.route
+@app.route("/home")
 def home():
-    return "home.html"
+    friend_ids = [friend.id for friend in current_user.friends]
+    friend_ids.append(current_user.id)
+    posts = (
+        Post.query.filter(Post.user_id.in_(friend_ids)).order_by(Post.date.desc()).all()
+    )
+    return render_template("home.html", user = current_user, posts=posts)
 
 
-@app.route("/home", methods=["POST", "GET"])
+@app.route("/add_project", methods=["POST", "GET"])
 @login_required
 def add_project():
     get_top_interests_and_update(current_user.id)
@@ -200,10 +206,15 @@ def add_project():
             else:
                 text_type = "not science"
 
-            new_post = Post(text=post, user_id=current_user.id, topic=text_type)
+
+            start_date = request.form.get("start_date")
+            end_date = request.form.get("end_date")
+
+            new_post = Post(text=post, user_id=current_user.id, topic=text_type, title = request.form.get("title"), description = request.form.get("description"), category = request.form.get("category"), start_date=start_date, end_date=end_date, country = request.form.get("country"))
             db.session.add(new_post)
             db.session.commit()
             flash("Post added")
+            return redirect(url_for("home"))
 
     friend_ids = [friend.id for friend in current_user.friends]
     friend_ids.append(current_user.id)
@@ -213,7 +224,6 @@ def add_project():
     )
 
     return render_template(
-        "home.html",
-        user=current_user,
-        posts=posts,
+        "add_project.html",
+        user = current_user
     )

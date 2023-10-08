@@ -54,6 +54,12 @@ class Post(db.Model):
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     topic = db.Column(db.String(50))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    title = db.Column(db.String(100))
+    description = db.Column(db.String(10000))
+    category = db.String(200)
+    start_date = db.Column(db.String(15))
+    end_date = db.Column(db.String(15))
+    country = db.String(db.String(50))
     comments = db.relationship("Comment", backref="post")
     likes = db.relationship("LikedPost", back_populates="post")
 
