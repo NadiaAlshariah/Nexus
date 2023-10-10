@@ -1,0 +1,34 @@
+# Virtual Environment
+venv/
+.venv/
+
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Editor-specific files
+.vscode/
+.idea/
+.pycharm/
+
+# Log files
+logs/
+*.log
+
+# Database migrations
+migrations/
+
+# Distribution files
+dist/
+build/
+*.egg-info/
+
+# Environment variables
+.env
+.env.local
+.env.dev
+.env.prod
+
+# Miscellaneous
+.DS_Store
+thumbs.db
