@@ -1,0 +1,153 @@
+we built a multi-model system that contains 4 LSTM nueral network models
+which predicts the topic of the posts to classify them into categories to make a recommendation system
+that recommend users that are interested in same categories 
+
+
+
+LIBRARIES USED:
+1.pandas: For data manipulation and analysis
+2.os: For interacting with the operating system
+3.tqdm: To create progress bars for loops to track the progress of operations
+4.neattext: For text processing library used for text cleaning and normalization
+5.nltk: The Natural Language Toolkit, used for NLP operations.
+6.spacy: NLP library used for text processing tasks, including POS tagging 
+7.re: For pattern matching and replacement in strings
+8.WordNetLemmatizer : For lemmatization
+9.wordnet: To access WordNet's POS tags for lemmatization
+10.sklearn: To prepare the data for model training
+11.LabelEncoder: To encode label values
+12.shuffle: To shuffle DataFrame rows
+13.Tokenizer: For tokenization
+14.pad_sequences: Pad sequences to a consistent length
+15.Embedding, LSTM, Dense, Dropout, Sequential:For building the neural network model
+16.to_categorical: Binary matrix representation of the input as a NumPy array
+17.pickle: For saving and loading the tokenizer
+18.numpy: for numerical operations and array handling
+
+
+*****
+DATA:
+the data that we used to train the model is collected from diffirent resources to creat a multi-model system
+these data were collected then cleaned and categorized.
+s
+RESOURCES:
+https://www.kaggle.com/datasets/abisheksudarshan/topic-modeling-for-research-articles
+https://www.kaggle.com/datasets/arashnic/urban-sound
+https://www.kaggle.com/datasets/jainpooja/topic-modeling-for-research-articles-20
+https://www.kaggle.com/datasets/shivanandmn/multilabel-classification-dataset?select=train.csv
+https://www.kaggle.com/datasets/extralime/math-lectures
+https://www.kaggle.com/datasets/mrutyunjaybiswal/iitjee-neet-aims-students-questions-data
+https://www.kaggle.com/datasets/anmolkumar/janatahack-independence-day-2020-ml-hackathon?select=train.csv
+https://www.kaggle.com/datasets/viniciuslambert/medium-data-science-articles-dataset
+https://www.kaggle.com/datasets/baraamelhem/topic-classification-dataset
+https://www.kaggle.com/datasets/ivantha/sri-lanka-electronic-ads-dataset
+https://www.kaggle.com/datasets/jebathuraiibarnabas/engineering-books-data
+https://www.kaggle.com/datasets/tboyle10/medicaltranscriptions
+https://www.kaggle.com/datasets/jpmiller/layoutlm?select=medquad.csv
+https://www.kaggle.com/datasets/louise2001/quantum-physics-articles-on-arxiv-2010-to-2020
+https://www.kaggle.com/datasets/vivmankar/physics-vs-chemistry-vs-biology
+https://www.kaggle.com/datasets/die9origephit/climate-change-tweets
+https://www.kaggle.com/datasets/emiliawisnios/national-energy-and-climate-plans-eu
+https://www.kaggle.com/datasets/namanj27/astronomers-telegram-dataset?select=Processed_Atels.csv
+https://www.kaggle.com/datasets/patrickfleith/space-news-dataset
+https://www.kaggle.com/datasets/amartyanambiar/the-space-race-tweets
+https://www.kaggle.com/datasets/stackoverflow/pythonquestions?select=Answers.csv
+https://www.kaggle.com/datasets/maksymshkliarevskyi/reddit-data-science-posts
+Nasa Data : https://www.citizenscience.gov/catalog/#
+
+CLEANING DATA :
+1.remove the null values in text columns 
+2.remove categories that we don't consider as scientific foields
+3.NLP
+
+NLP:
+1.Text cleaning :
+	-Normalize the text.
+	-Remove punctuation marks.
+	-Remove stop words.
+	-Remove HTML tags.
+	-Remove special characters.
+	-Remove emojis.
+	-Fix contractions.
+
+2.POS tagging to words 
+3.Lemmatization
+
+
+CLASSIFYING DATA :
+we classified the data into 4 categories : 
+1.Foundation emprical science , which contains : physics, chemistry ,biology, earth science , astronomy
+2.Foundation formal science , which contains: mathematics , statistics
+3.Application emprical science , which contains: engineering , medicine , pharmacy   
+4.Application formal science , which contains: computer science and machine learning
+
+
+
+
+AI MODEL:
+
+we built 4 LSTM neural network models 
+Model 1: to predict if the post is scientific or not 
+Model 2: if it is scientific ; model 2 is to predict if the post is Formal or Emprical
+Model 3: if it is Emprical ; model 3 is to predict if the post either application or foundation emprical 
+Model 4: if it is Formal ; model4 is to predict if the post either application or foundation formal
+**
+
+Model 1: The model was trained using 80% of the available data. During training, the sequences were limited to a maximum length of 20 words to manage input size, 60 units to LSTM layer,the dropout layer deactivates 0.2 of LSTM units and 3 embedding dimensions .
+model 1 used 290k rows of data , 200k of scientific texts and 90k of non scientific texts
+The model architecture comprises four essential layers:
+1.Embedding Layer: This layer transforms the input word indices into dense vectors, allowing the model to learn contextual relationships between words.
+2.LSTM Layer: Utilizing Long Short-Term Memory units, this layer captures sequential patterns and dependencies within the input sequences.
+3.Dropout Layer: To mitigate overfitting, a dropout layer was included, which randomly deactivates a portion of the LSTM units during training, thus enhancing generalization.
+4.Dense Layer: The final layer applies a 'sigmoid' activation function.
+
+The chosen loss function for optimization is 'binary_crossentropy' , The model's optimization is managed by the 'adam' optimizer.
+The training process is tuned with a batch size of 25, indicating how many samples are used for each update of the model's internal parameters.
+Training is conducted over 5 epochs, which signifies the number of times the entire dataset is presented to the model during training.
+
+**
+Model 2: The model was trained using 80% of the available data. During training, the sequences were limited to a maximum length of 20 words to manage input size, 60 units to LSTM layer, the dropout layer deactivates 0.2 of LSTM units and 3 embedding dimensions .
+model 2 used 900k rows of data , 500k of Formal science texts and 400k of emprical science texts
+The model architecture comprises four essential layers:
+1.Embedding Layer: This layer transforms the input word indices into dense vectors, allowing the model to learn contextual relationships between words.
+2.LSTM Layer: Utilizing Long Short-Term Memory units, this layer captures sequential patterns and dependencies within the input sequences.
+3.Dropout Layer: To mitigate overfitting, a dropout layer was included, which randomly deactivates a portion of the LSTM units during training, thus enhancing generalization.
+4.Dense Layer: The final layer applies a 'sigmoid' activation function.
+
+The chosen loss function for optimization is 'binary_crossentropy' , The model's optimization is managed by the 'adam' optimizer.
+The training process is tuned with a batch size of 25, indicating how many samples are used for each update of the model's internal parameters.
+Training is conducted over 5 epochs, which signifies the number of times the entire dataset is presented to the model during training.
+
+**
+Model 3: The model was trained using 80% of the available data. During training, the sequences were limited to a maximum length of 20 words to manage input size, 60 units to LSTM layer, the dropout layer deactivates 0.2 of LSTM units and 3 embedding dimensions .
+model 3 used 240k rows of data , 150k of Foundation emprical science texts and 90k of Application emprical science texts
+The model architecture comprises four essential layers:
+1.Embedding Layer: This layer transforms the input word indices into dense vectors, allowing the model to learn contextual relationships between words.
+2.LSTM Layer: Utilizing Long Short-Term Memory units, this layer captures sequential patterns and dependencies within the input sequences.
+3.Dropout Layer: To mitigate overfitting, a dropout layer was included, which randomly deactivates a portion of the LSTM units during training, thus enhancing generalization.
+4.Dense Layer: The final layer applies a 'sigmoid' activation function.
+
+The chosen loss function for optimization is 'binary_crossentropy' , The model's optimization is managed by the 'adam' optimizer.
+The training process is tuned with a batch size of 25, indicating how many samples are used for each update of the model's internal parameters.
+Training is conducted over 5 epochs, which signifies the number of times the entire dataset is presented to the model during training.
+
+**
+Model 4: The model was trained using 80% of the available data. During training, the sequences were limited to a maximum length of 20 words to manage input size, 60 units to LSTM layer, the dropout layer deactivates 0.2 of LSTM units and 3 embedding dimensions .
+model 4 used 280k rows of data , 165k of Foundation Formal science texts and 115k of Application Formal science texts
+The model architecture comprises four essential layers:
+1.Embedding Layer: This layer transforms the input word indices into dense vectors, allowing the model to learn contextual relationships between words.
+2.LSTM Layer: Utilizing Long Short-Term Memory units, this layer captures sequential patterns and dependencies within the input sequences.
+3.Dropout Layer: To mitigate overfitting, a dropout layer was included, which randomly deactivates a portion of the LSTM units during training, thus enhancing generalization.
+4.Dense Layer: The final layer applies a 'sigmoid' activation function.
+
+The chosen loss function for optimization is 'binary_crossentropy' , The model's optimization is managed by the 'adam' optimizer.
+The training process is tuned with a batch size of 25, indicating how many samples are used for each update of the model's internal parameters.
+Training is conducted over 5 epochs, which signifies the number of times the entire dataset is presented to the model during training.
+
+
+the way that model is working with is:
+1.we apply NLP processing on the text post using a class that is made by us to apply NLP processing on the post texts and uses the same NLP processing that we mentioned above.
+2.after applying NLP on text it we turn the text into sequences, and then we transform the words indices into dense vectors
+3.the embedded words enter the model to predict the category of the post  
+
+

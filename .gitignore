@@ -1,6 +1,7 @@
 # Virtual Environment
 venv/
 .venv/
+myenv/
 
 # Compiled Python files
 *.pyc
