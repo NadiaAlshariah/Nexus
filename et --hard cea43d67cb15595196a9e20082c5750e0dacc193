@@ -1,0 +1,211 @@
+[33mcommit 8cb97da98e38dc88e1a21fcdfc60490e56c15a44[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 19:30:39 2023 +0300
+
+    Revert "more modules"
+    
+    This reverts commit 99dd6751b842a93975e56d493e24fa6c45aa39af.
+
+[33mcommit 6724d1750b65fe8970db001673b0327c12461cd0[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 19:30:33 2023 +0300
+
+    Revert "Enable Git LFS for large files"
+    
+    This reverts commit c5e5ef0bf8787c974edb80a9687b1aaa77f06321.
+
+[33mcommit 8844c85fc33ef01de7ba561ae23d708a70dea915[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 19:30:23 2023 +0300
+
+    Revert "Remove large files for Git LFS tracking"
+    
+    This reverts commit 448572c42808f7afb983c1f280c03e9e3ae454ae.
+
+[33mcommit 34133a1a2698916990b64150e8bf84d3b91f7567[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 19:30:11 2023 +0300
+
+    Revert "Re-add large files with Git LFS tracking"
+    
+    This reverts commit 53b779459ce84e2d019e9bdaa10310c429ea3c60.
+
+[33mcommit 53b779459ce84e2d019e9bdaa10310c429ea3c60[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 18:10:18 2023 +0300
+
+    Re-add large files with Git LFS tracking
+
+[33mcommit 448572c42808f7afb983c1f280c03e9e3ae454ae[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 18:10:01 2023 +0300
+
+    Remove large files for Git LFS tracking
+
+[33mcommit c5e5ef0bf8787c974edb80a9687b1aaa77f06321[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 17:36:04 2023 +0300
+
+    Enable Git LFS for large files
+
+[33mcommit 99dd6751b842a93975e56d493e24fa6c45aa39af[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 17:31:02 2023 +0300
+
+    more modules
+
+[33mcommit cea43d67cb15595196a9e20082c5750e0dacc193[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 17:29:40 2023 +0300
+
+    commit1
+
+[33mcommit e15670c299340a7ed34610ac01a32b92d0a04a3b[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 10 17:24:46 2023 +0300
+
+    models installed
+
+[33mcommit 0a61aa97d484e810bf9ff88698713d3750b74f70[m
+Author: Sewar Mohammad Hammouri <144936680+Sewar-Hammouri@users.noreply.github.com>
+Date:   Sun Oct 8 14:56:44 2023 +0300
+
+    Add files via upload
+
+[33mcommit 1d549f477b17139a35b29ac0d80725e5ac931beb[m
+Author: Sewar Mohammad Hammouri <144936680+Sewar-Hammouri@users.noreply.github.com>
+Date:   Sun Oct 8 14:31:38 2023 +0300
+
+    Add files via upload
+
+[33mcommit e51153d994c1f4e24e01e20cdc2256aafcd15578[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sun Oct 8 12:04:10 2023 +0300
+
+    finished
+
+[33mcommit cc86354ff236da390b3cc3aa9b2c134b74eb3f25[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sun Oct 8 12:04:01 2023 +0300
+
+    finished
+
+[33mcommit 9ce325ec71810b0824bb53f10282a2d9723ba04f[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sun Oct 8 10:57:15 2023 +0300
+
+    Revert "minor edit"
+    
+    This reverts commit e938ffe130772be99d9fb2feaa834300aaa4f0ef.
+
+[33mcommit e6eaf31262d1e4e1bfb06528b6fa3489e2208117[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sun Oct 8 10:56:25 2023 +0300
+
+    to have a project and something
+
+[33mcommit b5a5208f64662e078c8217ec5082aac32b1de2cb[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sun Oct 8 09:36:17 2023 +0300
+
+    Revert "the day of the competeion"
+    
+    This reverts commit d4ca4ea09c51d18f8883df1108c2b26729f6fd62.
+
+[33mcommit bbffc739a0ec57f9399027ea64a6cca70298d1fc[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sun Oct 8 09:25:41 2023 +0300
+
+    Revert "html decoration"
+    
+    This reverts commit 4ae08fd70ff30f7ac19d9d1319fa8e9c93ef7b5b.
+
+[33mcommit d4ca4ea09c51d18f8883df1108c2b26729f6fd62[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sat Oct 7 19:43:06 2023 +0300
+
+    the day of the competeion
+
+[33mcommit 4ae08fd70ff30f7ac19d9d1319fa8e9c93ef7b5b[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sat Oct 7 16:29:49 2023 +0300
+
+    html decoration
+
+[33mcommit e938ffe130772be99d9fb2feaa834300aaa4f0ef[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sat Oct 7 12:46:43 2023 +0300
+
+    minor edit
+
+[33mcommit 981130b85fc9db2e8ef360b33249f0588807ef3a[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Fri Oct 6 19:25:56 2023 +0300
+
+    model words lowerd to 20
+
+[33mcommit 0ae692320af215471492b744c7a73334c8b12fdc[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Fri Oct 6 18:49:40 2023 +0300
+
+    everything done except for the settings not done
+
+[33mcommit 7a177bd46cb849c91e403251c76f74ba45209cfd[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Fri Oct 6 10:12:36 2023 +0300
+
+    added interests
+
+[33mcommit 062730709bfa508bc2ac54b0c44471e660334a5c[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Thu Oct 5 20:57:01 2023 +0300
+
+    added profiles, comments, likes
+
+[33mcommit 83524e27a6140d91587f29a9b4510a3692732904[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Wed Oct 4 18:10:41 2023 +0300
+
+    user page was added
+
+[33mcommit 464b17ec51d782db4ea955d2a60697ddc315a630[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Wed Oct 4 15:32:52 2023 +0300
+
+    add home page and posting
+
+[33mcommit fe7c33cec5751c4b09229db79b08989710338a75[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Tue Oct 3 20:27:36 2023 +0300
+
+    database updated
+
+[33mcommit e0511bf502e93832dc3f56a561f3eeab5f67eba2[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Mon Oct 2 20:08:26 2023 +0300
+
+    external database done
+
+[33mcommit 402a1f935f132f41972f408e074758a3d456d4eb[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Mon Oct 2 19:24:43 2023 +0300
+
+    settings html
+
+[33mcommit 2085c99e66856a3acc4939de65377e5bf4ee6d8f[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Mon Oct 2 13:13:54 2023 +0300
+
+    logout bug solved
+
+[33mcommit e430cbb2a2cde645cd09930ec57ae28133e57661[m
+Author: Nadia Alshariah <nadiakalshariah@gmail.com>
+Date:   Sat Sep 30 20:58:53 2023 +0300
+
+    logout bug solved
+
+[33mcommit 6dbdcccc3c3a867f5c51b2b0666bf02e185a9edd[m
+Author: NadiaAlshariah <nadiakalshariah@gmail.com>
+Date:   Sat Sep 30 16:51:52 2023 +0300
+
+    all authentication done
