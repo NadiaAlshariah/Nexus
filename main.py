@@ -10,4 +10,4 @@ app.register_blueprint(user_bp, url_prefix="/<username>")
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False, host = "0.0.0.0")
