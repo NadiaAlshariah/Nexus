@@ -1,2 +1,2 @@
 class Config:
-    DEBUG = False
+    DEBUG = True
