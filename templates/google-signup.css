@@ -1,0 +1,302 @@
+.vector-icon15 {
+  position: absolute;
+  top: 512px;
+  left: 0;
+  width: 1994px;
+  height: 553px;
+}
+.google-signup-child {
+  position: absolute;
+  top: 271px;
+  left: 412px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-gainsboro-600);
+  width: 615px;
+  height: 599px;
+}
+.google-icon1 {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.sign-in-with2 {
+  flex: 1;
+  position: relative;
+  line-height: 20px;
+  font-weight: 600;
+}
+.title-contents1 {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) var(--padding-base);
+  gap: var(--gap-xs);
+}
+.px-border-bottom1 {
+  align-self: stretch;
+  position: relative;
+  background-color: var(--color-gainsboro-400);
+  height: 1px;
+}
+.title3 {
+  align-self: stretch;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sign-in2 {
+  align-self: stretch;
+  position: relative;
+  line-height: 32px;
+}
+.company {
+  color: var(--color-royalblue);
+}
+.to-continue-to-container {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--components-input-text-size);
+  line-height: 24px;
+  color: var(--color-black);
+}
+.header-text2,
+.header1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-text2 {
+  gap: var(--gap-5xs);
+}
+.header1 {
+  padding: var(--padding-9xs) var(--padding-21xl) 0;
+}
+.label4 {
+  border: 0;
+  background-color: transparent;
+  font-family: var(--components-input-label);
+  font-size: var(--components-input-text-size);
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.2px;
+  line-height: 24px;
+  color: var(--color-dimgray-100);
+  text-align: left;
+}
+.container1,
+.input7 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) 0;
+}
+.input7 {
+  border-radius: var(--br-5xs);
+  border: 1px solid var(--color-gray-300);
+  flex-direction: column;
+  padding: 0 var(--padding-xs);
+}
+.form1,
+.password4,
+.text-fieldoutlined {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.password4 {
+  gap: var(--gap-5xs);
+}
+.form1 {
+  padding: 0 var(--padding-21xl);
+}
+.create-account {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  font-size: var(--font-size-sm);
+  line-height: 18px;
+  font-weight: 600;
+  font-family: var(--components-input-label);
+  color: var(--color-royalblue);
+  text-align: right;
+  display: inline-block;
+}
+.link3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.label5 {
+  position: relative;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.4px;
+  line-height: 24px;
+  font-family: var(--components-input-label);
+  color: var(--simply-white);
+  text-align: left;
+}
+.button9 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-7xs) var(--padding-5xl);
+  background-color: transparent;
+  border-radius: var(--br-5xs);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.action1,
+.buttoncontained3 {
+  display: flex;
+  align-items: center;
+}
+.buttoncontained3 {
+  border-radius: var(--br-9xs);
+  background-color: var(--color-royalblue);
+  height: 36px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+}
+.action1 {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0 var(--padding-21xl);
+  gap: var(--gap-3xs);
+}
+.dialog1,
+.main-content1,
+.sign-in-with-google1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-content1 {
+  align-self: stretch;
+  justify-content: center;
+  gap: var(--gap-5xl);
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: #202124;
+}
+.dialog1,
+.sign-in-with-google1 {
+  justify-content: flex-start;
+}
+.dialog1 {
+  align-self: stretch;
+  border-radius: var(--br-5xs);
+  background-color: var(--simply-white);
+  box-shadow: 0 4px 8px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-gainsboro-400);
+  box-sizing: border-box;
+  height: 500px;
+  padding: 0 0 var(--padding-17xl);
+  gap: var(--gap-13xl);
+}
+.sign-in-with-google1 {
+  position: absolute;
+  top: 311px;
+  left: 461px;
+  border-radius: var(--br-xl);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 500px;
+}
+.back-button-child3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro-600);
+  width: 94px;
+  height: 89px;
+}
+.chevron-right-icon6 {
+  position: absolute;
+  top: 23.73px;
+  left: 27.16px;
+  width: 41.78px;
+  height: 39.56px;
+  overflow: hidden;
+}
+.back-button6 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 112px;
+  left: 82px;
+  width: 94px;
+  height: 89px;
+}
+.where-skills-meet5 {
+  margin: 0;
+}
+.where-skills-meet-container5 {
+  position: absolute;
+  top: 197px;
+  left: 555px;
+  font-size: var(--font-size-4xl);
+  font-family: var(--font-inter);
+  color: var(--white);
+}
+.ne7,
+.x7 {
+  font-weight: 800;
+  font-family: var(--font-inter);
+}
+.x7 {
+  font-weight: 700;
+}
+.nexus-txt2 {
+  line-break: anywhere;
+  width: 100%;
+}
+.nexus7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 101px;
+  left: 514px;
+  font-size: var(--font-size-77xl);
+  color: var(--white);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 398px;
+  height: 115px;
+}
+.google-signup {
+  position: relative;
+  background-color: var(--simply-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--components-input-text-size);
+  color: var(--color-dimgray-200);
+  font-family: var(--components-input-label);
+}

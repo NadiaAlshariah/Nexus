@@ -1,0 +1,508 @@
+.profile-nav-bar8,
+.search-nasa-child {
+  position: absolute;
+  left: 32px;
+  border-radius: var(--br-xl);
+}
+.search-nasa-child {
+  top: 934px;
+  background-color: var(--simply-white);
+  width: 734px;
+  height: 1382px;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+}
+.profile-nav-bar8 {
+  top: 16px;
+  background-color: var(--color-darkturquoise-100);
+  width: 1382px;
+  height: 153px;
+}
+.ne20 {
+  font-weight: 800;
+}
+.x20 {
+  font-size: var(--font-size-55xl);
+  font-weight: 700;
+}
+.nexus20 {
+  position: absolute;
+  top: 40px;
+  left: 86px;
+  color: var(--color-whitesmoke-200);
+  display: inline-block;
+  width: 365px;
+  height: 115px;
+  font-size: var(--font-size-48xl);
+}
+.where-skills-meet-container16 {
+  position: absolute;
+  top: 118px;
+  left: 89px;
+  font-size: var(--font-size-mid);
+  color: var(--simply-white);
+}
+.search-icon8,
+.search29 {
+  position: relative;
+  flex-shrink: 0;
+}
+.search-icon8 {
+  width: 22px;
+  height: 22px;
+  overflow: hidden;
+}
+.search29 {
+  line-height: 18px;
+  display: inline-block;
+  width: 538px;
+}
+.search-parent8 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.search28 {
+  position: absolute;
+  top: 543px;
+  left: 136px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-whitesmoke-400);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+  width: 630px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-4xs) var(--padding-mini);
+  box-sizing: border-box;
+  font-size: var(--components-input-text-size);
+  color: var(--color-dimgray-400);
+  font-family: var(--components-input-label);
+}
+.home8 {
+  position: absolute;
+  top: 27.45px;
+  left: 0;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.05em;
+  font-family: var(--font-nunito-sans);
+  color: var(--simply-white);
+  text-align: left;
+}
+.union-icon15 {
+  position: relative;
+  width: 25px;
+  height: 23.41px;
+}
+.home-parent6 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 88px;
+  left: 905px;
+  width: 44px;
+  height: 38.45px;
+}
+.communities12 {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.05em;
+  font-family: var(--font-nunito-sans);
+  color: var(--simply-white);
+  text-align: left;
+}
+.network-icon15 {
+  position: absolute;
+  top: 0;
+  left: 31px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+.communities-parent6 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 84px;
+  left: 969px;
+  width: 104px;
+  height: 42px;
+}
+.notifications8 {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.05em;
+  font-family: var(--font-nunito-sans);
+  color: var(--simply-white);
+  text-align: left;
+}
+.icon42 {
+  position: absolute;
+  height: 63.41%;
+  width: 26.53%;
+  top: 0;
+  right: 38.78%;
+  bottom: 36.59%;
+  left: 34.69%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.notifications-parent6 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 85px;
+  left: 1194px;
+  width: 98px;
+  height: 41px;
+}
+.profile11 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.05em;
+  font-family: var(--font-nunito-sans);
+  color: var(--simply-white);
+  text-align: left;
+}
+.profile-wrapper3 {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 51px;
+  height: 11px;
+}
+.droopfilledaccount-icon8 {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 31px;
+  height: 31px;
+  overflow: hidden;
+}
+.group-parent37 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 83px;
+  left: 1312px;
+  width: 51px;
+  height: 43px;
+}
+.messaging8 {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  font-size: var(--font-size-mini);
+  letter-spacing: 0.05em;
+  font-family: var(--font-nunito-sans);
+  color: var(--simply-white);
+  text-align: left;
+}
+.droopfilledmessage-icon8 {
+  position: absolute;
+  top: 0;
+  left: 21px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+.messaging-parent6 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 83px;
+  left: 1093px;
+  width: 81px;
+  height: 43px;
+}
+.explore-projects-from {
+  margin: 0;
+}
+.explore-projects-from-container {
+  position: absolute;
+  top: 627px;
+  left: 185px;
+  color: var(--color-dimgray-400);
+}
+.frame18 {
+  position: absolute;
+  top: 837px;
+  left: 239px;
+  width: 235px;
+  height: 58px;
+  overflow: hidden;
+}
+.ne21,
+.x21 {
+  font-weight: 800;
+  font-family: var(--font-inter);
+}
+.x21 {
+  font-weight: 700;
+}
+.nexus21,
+.where-skills-meet-container17 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-21xl);
+  color: var(--color-dimgray-400);
+  text-align: left;
+  display: inline-block;
+  width: 140px;
+  height: 41px;
+}
+.where-skills-meet-container17 {
+  top: 41px;
+  left: 2px;
+  font-size: var(--font-size-mid);
+  font-family: var(--font-inter);
+  width: 233px;
+  height: 20px;
+}
+.nexus-parent8 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 968px;
+  left: 55px;
+  width: 235px;
+  height: 61px;
+}
+.nexusconnect10,
+.nexusconnect11,
+.nexusconnect8,
+.nexusconnect9 {
+  position: absolute;
+  top: 1072px;
+  left: 111px;
+  font-family: var(--font-poppins);
+}
+.nexusconnect10,
+.nexusconnect11,
+.nexusconnect9 {
+  top: 1077px;
+  left: 375px;
+}
+.nexusconnect10,
+.nexusconnect11 {
+  top: 1079px;
+  left: 642px;
+}
+.nexusconnect11 {
+  top: 1076px;
+  left: 917px;
+}
+.vector-icon50,
+.vector-icon51 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vector-icon51 {
+  height: 38.16%;
+  width: 54.72%;
+  top: 30.95%;
+  right: 23.23%;
+  bottom: 30.89%;
+  left: 22.05%;
+}
+.vector-parent36 {
+  text-decoration: none;
+  position: absolute;
+  height: 3.18%;
+  width: 2.91%;
+  top: 81.35%;
+  right: 37.43%;
+  bottom: 15.47%;
+  left: 59.65%;
+}
+.vector-icon52,
+.vector-icon53 {
+  position: absolute;
+  height: 99.41%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0.59%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vector-icon53 {
+  height: 80.48%;
+  width: 42.74%;
+  top: 19.52%;
+  right: 27.7%;
+  bottom: 0;
+  left: 29.56%;
+}
+.vector-parent37 {
+  text-decoration: none;
+  position: absolute;
+  height: 3.18%;
+  width: 2.91%;
+  top: 80.67%;
+  right: 93.27%;
+  bottom: 16.15%;
+  left: 3.82%;
+}
+.vector-icon55 {
+  position: absolute;
+  height: 44.91%;
+  width: 54.41%;
+  top: 27.56%;
+  right: 22.16%;
+  bottom: 27.53%;
+  left: 23.43%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vector-parent38 {
+  text-decoration: none;
+  position: absolute;
+  height: 3.18%;
+  width: 2.91%;
+  top: 81.65%;
+  right: 56.05%;
+  bottom: 15.17%;
+  left: 41.04%;
+}
+.vector-icon57,
+.vector-icon58,
+.vector-icon59 {
+  position: absolute;
+  height: 6.9%;
+  width: 6.9%;
+  top: 31.09%;
+  right: 31.03%;
+  bottom: 62.01%;
+  left: 62.07%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vector-icon58,
+.vector-icon59 {
+  height: 28.89%;
+  width: 28.89%;
+  top: 35.5%;
+  right: 35.33%;
+  bottom: 35.61%;
+  left: 35.78%;
+}
+.vector-icon59 {
+  height: 58.62%;
+  width: 58.62%;
+  top: 20.63%;
+  right: 20.69%;
+  bottom: 20.75%;
+  left: 20.69%;
+}
+.vector-parent39 {
+  text-decoration: none;
+  position: absolute;
+  height: 3.18%;
+  width: 2.91%;
+  top: 81.27%;
+  right: 74.66%;
+  bottom: 15.55%;
+  left: 22.43%;
+}
+.begin-your-search {
+  position: absolute;
+  top: 287px;
+  left: 121px;
+  font-size: 50px;
+  display: inline-block;
+  color: var(--color-darkslateblue);
+  width: 694px;
+}
+.search-nasa-item {
+  position: absolute;
+  height: 23.57%;
+  width: 26.39%;
+  top: 18.65%;
+  right: 14.72%;
+  bottom: 57.78%;
+  left: 58.89%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.group-child132 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslateblue);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+  width: 278px;
+  height: 45.45px;
+}
+.lets-go {
+  position: absolute;
+  top: 10px;
+  left: 95px;
+  font-size: var(--font-size-5xl);
+  display: inline-block;
+  font-family: var(--font-inter);
+  color: var(--simply-white);
+  text-align: left;
+  width: 161px;
+  height: 45px;
+}
+.rectangle-parent80 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 617px;
+  left: 489px;
+  width: 278px;
+  height: 55px;
+}
+.search-nasa {
+  position: relative;
+  background-color: var(--color-whitesmoke-400);
+  width: 100%;
+  height: 1319px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-steelblue);
+  font-family: var(--font-inter);
+}

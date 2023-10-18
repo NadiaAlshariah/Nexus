@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./google-signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@300;400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="google-signup">
+      <img class="vector-icon15" alt="" src="./public/vector9.svg" />
+
+      <div class="google-signup-child"></div>
+      <div class="sign-in-with-google1">
+        <div class="dialog1">
+          <div class="title3">
+            <div class="title-contents1">
+              <img class="google-icon1" alt="" src="./public/googleicon1.svg" />
+
+              <div class="sign-in-with2">Sign in with Google</div>
+            </div>
+            <div class="px-border-bottom1"></div>
+          </div>
+          <div class="main-content1">
+            <div class="header1">
+              <div class="header-text2">
+                <div class="sign-in2">Sign in</div>
+                <div class="to-continue-to-container">
+                  <span>to continue to </span>
+                  <span class="company">Company</span>
+                </div>
+              </div>
+            </div>
+            <div class="form1">
+              <div class="password4">
+                <div class="text-fieldoutlined">
+                  <div class="input7">
+                    <div class="container1">
+                      <textarea
+                        class="label4"
+                        required="{true}"
+                        autofocus="{true}"
+                      >
+Email or phone</textarea
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="text-fieldoutlined">
+                  <button class="create-account">Forgot email?</button>
+                </div>
+              </div>
+            </div>
+            <div class="action1">
+              <div class="link3">
+                <button class="create-account">Create account</button>
+              </div>
+              <div class="buttoncontained3">
+                <button class="button9" id="button">
+                  <b class="label5">Next</b>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="back-button6" id="backButton">
+        <div class="back-button-child3"></div>
+        <img
+          class="chevron-right-icon6"
+          alt=""
+          src="./public/chevronright.svg"
+        />
+      </button>
+      <b class="where-skills-meet-container5">
+        <p class="where-skills-meet5">Where Skills Meet Solutions</p>
+      </b>
+      <button class="nexus7">
+        <span class="nexus-txt2">
+          <span class="ne7">NE</span>
+          <i class="x7">X</i>
+          <span class="ne7">US</span>
+        </span>
+      </button>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./google-signup-password.html";
+        });
+      }
+      
+      var backButton = document.getElementById("backButton");
+      if (backButton) {
+        backButton.addEventListener("click", function (e) {
+          window.location.href = "./signup1.html";
+        });
+      }
+      </script>
+  </body>
+</html>

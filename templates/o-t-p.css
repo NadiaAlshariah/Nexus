@@ -1,0 +1,287 @@
+.otp-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1994px;
+  height: 1070.23px;
+}
+.forgot-password2 {
+  position: absolute;
+  top: 673px;
+  left: 681px;
+  text-decoration: underline;
+  text-transform: lowercase;
+  font-family: var(--font-poppins);
+  display: inline-block;
+  width: 258px;
+  height: 26px;
+}
+.signup-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-81xl);
+  background-color: var(--color-whitesmoke-300);
+  width: 350px;
+  height: 95px;
+}
+.signup5 {
+  position: absolute;
+  top: 32px;
+  left: 215px;
+  font-size: var(--font-size-xl);
+  text-transform: lowercase;
+  font-family: var(--font-poppins);
+  color: var(--white);
+  text-align: left;
+}
+.group-child27,
+.signup4 {
+  position: absolute;
+  left: 0;
+  height: 95px;
+}
+.signup4 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 1px;
+  width: 350px;
+}
+.group-child27 {
+  top: 0;
+  border-radius: var(--br-81xl);
+  background-color: var(--white);
+  width: 198px;
+}
+.login6 {
+  position: absolute;
+  top: 25px;
+  left: 60px;
+  font-size: var(--font-size-11xl);
+  text-transform: lowercase;
+  font-family: var(--font-poppins);
+  color: var(--simply-white);
+  text-align: left;
+}
+.login5,
+.rectangle-parent8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 198px;
+  height: 95px;
+}
+.login5 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.loginsignin1 {
+  position: absolute;
+  top: 67px;
+  left: 1052px;
+  width: 350px;
+  height: 96px;
+}
+.back-button-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro-600);
+  width: 88px;
+  height: 89px;
+}
+.chevron-right-icon2 {
+  position: absolute;
+  top: 23.73px;
+  left: 25.42px;
+  width: 39.11px;
+  height: 39.56px;
+  overflow: hidden;
+}
+.back-button2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 63px;
+  left: 69px;
+  width: 88px;
+  height: 89px;
+}
+.otp-child1,
+.otp-child2,
+.otp-inner,
+.otp-item {
+  position: absolute;
+  top: 325px;
+  left: 257px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-whitesmoke-100);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12) inset;
+  width: 91px;
+  height: 91px;
+}
+.otp-child1,
+.otp-child2,
+.otp-inner {
+  left: 371px;
+}
+.otp-child1,
+.otp-child2 {
+  left: 485px;
+}
+.otp-child2 {
+  left: 599px;
+}
+.input {
+  font-weight: 500;
+  position: absolute;
+  left: 638px;
+}
+.input,
+.input1,
+.input2 {
+  border: 0;
+  font-family: var(--font-outfit);
+  font-size: var(--font-size-6xl);
+  background-color: transparent;
+  top: 355px;
+  color: var(--color-black);
+  text-align: left;
+}
+.input1 {
+  font-weight: 500;
+  position: absolute;
+  left: 524px;
+}
+.input2 {
+  left: 410px;
+}
+.input2,
+.input3,
+.sec {
+  position: absolute;
+  font-weight: 500;
+}
+.input3 {
+  border: 0;
+  font-family: var(--font-outfit);
+  font-size: var(--font-size-6xl);
+  background-color: transparent;
+  top: 355px;
+  left: 296px;
+  color: var(--color-black);
+  text-align: left;
+}
+.sec {
+  top: 0;
+  left: 0;
+}
+.sec-wrapper {
+  position: absolute;
+  top: 441px;
+  left: 432px;
+  width: 113px;
+  height: 29px;
+  color: #464646;
+}
+.dont-receive-code,
+.re-send {
+  position: absolute;
+  top: 494px;
+  left: 304px;
+  font-size: var(--font-size-9xl);
+  color: #5a5a5a;
+}
+.re-send {
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  font-family: var(--font-outfit);
+  color: #383737;
+  text-align: left;
+}
+.re-send-wrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 494px;
+  left: 564px;
+  width: 106px;
+  height: 35px;
+}
+.span {
+  font-weight: 600;
+  color: var(--color-black);
+}
+.enter-the-otp-container {
+  position: absolute;
+  top: 263px;
+  left: 257px;
+  font-size: var(--font-size-9xl);
+  color: #4e4d4d;
+}
+.otp-verification {
+  position: absolute;
+  top: 201px;
+  left: 252px;
+  font-size: var(--font-size-16xl);
+  font-weight: 500;
+  font-family: var(--font-poppins);
+  color: var(--color-black);
+}
+.group-child28 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xs);
+  background-color: #faa32b;
+  width: 325px;
+  height: 55px;
+  mix-blend-mode: normal;
+}
+.submit {
+  position: absolute;
+  top: 11px;
+  left: 116px;
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+  font-family: var(--font-outfit);
+  color: var(--simply-white);
+  text-align: left;
+}
+.otp-inner1,
+.rectangle-parent9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 325px;
+  height: 55px;
+}
+.otp-inner1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 556px;
+  left: 327px;
+}
+.otp {
+  position: relative;
+  background-color: var(--simply-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-4xl);
+  color: var(--simply-white);
+  font-family: var(--font-outfit);
+}

@@ -1,0 +1,266 @@
+.microsoft-child,
+.vector-icon13 {
+  position: absolute;
+  top: 512px;
+  left: 0;
+  width: 1994px;
+  height: 553px;
+}
+.microsoft-child {
+  top: 271px;
+  left: 412px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-gainsboro-600);
+  width: 615px;
+  height: 599px;
+}
+.microsoft-logo-icon1 {
+  position: relative;
+  width: 108px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.body4 {
+  position: relative;
+  line-height: 32px;
+}
+.title1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.templabel1 {
+  position: relative;
+  letter-spacing: 0.2px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  width: 62px;
+}
+.email-address,
+.underline-icon1 {
+  align-self: stretch;
+  position: relative;
+}
+.email-address {
+  border: 0;
+  font-family: var(--components-input-label);
+  font-size: var(--components-input-text-size);
+  background-color: transparent;
+  letter-spacing: 0.2px;
+  line-height: 24px;
+  color: var(--color-gray-200);
+  text-align: left;
+}
+.underline-icon1 {
+  max-width: 100%;
+  overflow: hidden;
+  height: 1px;
+  flex-shrink: 0;
+}
+.input5,
+.text-fieldstandard1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.input5 {
+  gap: var(--gap-7xs-5);
+}
+.text-fieldstandard1 {
+  font-size: var(--components-input-label-size);
+  color: var(--color-gray-200);
+}
+.body5 {
+  position: relative;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+}
+.typography {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.body6 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  font-family: var(--components-input-label);
+  color: var(--color-cornflowerblue);
+  text-align: left;
+  display: inline-block;
+}
+.no-account,
+.typography1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.typography1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  flex-direction: column;
+}
+.no-account {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-9xs);
+  font-size: var(--font-size-sm);
+}
+.helpoutlineoutlined-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.sign-in-with-windows-hello {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.label1 {
+  position: relative;
+  font-size: var(--components-input-label-size);
+  letter-spacing: 0.4px;
+  line-height: 22px;
+  font-family: var(--components-input-label);
+  color: var(--simply-white);
+  text-align: left;
+}
+.button7 {
+  overflow: hidden;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) var(--padding-3xs);
+}
+.button6,
+.button7,
+.buttoncontained1 {
+  display: flex;
+  flex-direction: column;
+}
+.buttoncontained1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-cornflowerblue);
+  width: 120px;
+  height: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+.button6 {
+  align-self: stretch;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.microsoft-sign-in1,
+.sign-in1 {
+  position: absolute;
+  width: 507.27px;
+  height: 362.42px;
+}
+.sign-in1 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--simply-white);
+  box-shadow: 0 4px 8px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-13xl);
+  box-sizing: border-box;
+  gap: var(--gap-base);
+}
+.microsoft-sign-in1 {
+  top: 349px;
+  left: 466.58px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--color-black);
+  font-family: var(--components-input-label);
+}
+.back-button-child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro-600);
+  width: 94px;
+  height: 89px;
+}
+.chevron-right-icon4 {
+  position: absolute;
+  top: 23.73px;
+  left: 27.16px;
+  width: 41.78px;
+  height: 39.56px;
+  overflow: hidden;
+}
+.back-button4 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 93px;
+  left: 77px;
+  width: 94px;
+  height: 89px;
+}
+.ne5 {
+  font-weight: 800;
+}
+.x5 {
+  font-size: var(--font-size-81xl);
+  font-weight: 700;
+}
+.nexus5 {
+  position: absolute;
+  top: 93px;
+  left: 534px;
+  display: inline-block;
+  width: 365px;
+  height: 115px;
+  font-size: var(--font-size-77xl);
+}
+.where-skills-meet3 {
+  margin: 0;
+}
+.where-skills-meet-container3 {
+  position: absolute;
+  top: 194px;
+  left: 540px;
+  font-size: var(--font-size-4xl);
+}
+.microsoft {
+  position: relative;
+  background-color: var(--simply-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--white);
+  font-family: var(--font-inter);
+}
